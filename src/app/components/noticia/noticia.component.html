@@ -1,0 +1,20 @@
+
+<div class="card m-2 " *ngFor="let item of items">
+  <div class="card-header">
+    {{ item.title }}
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>
+          {{ item.description }}
+          <a [href]="item.url" target="_blank">Ver más...</a> 
+        </p>
+      <footer class="blockquote-footer">
+        <cite title="Source Title"> 
+          Author: {{ item.author }}, 
+        </cite>
+        {{ item.published_at | date }}
+      </footer>
+    </blockquote>
+  </div>
+</div>

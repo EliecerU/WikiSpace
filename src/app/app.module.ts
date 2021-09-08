@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule } from "@angular/common/http";
+
 //Importar componentes
 import { AppComponent } from './app.component';
 import { PresentacionComponent } from './components/presentacion/presentacion.component';
@@ -12,6 +14,8 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 //Importar rutas
 import { ROUTES } from "./app.routes";
 import { RouterModule } from '@angular/router';
+import { NoticiaComponent } from './components/noticia/noticia.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -21,9 +25,12 @@ import { RouterModule } from '@angular/router';
     SeccionNoticiasComponent,
     HeaderComponent,
     FooterComponent,
+    NoticiaComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot( ROUTES, { useHash:true } )
   ],
   providers: [],

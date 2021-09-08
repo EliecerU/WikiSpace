@@ -1,3 +1,4 @@
+<!-- Carrusel -->
 <div class="col">
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators ">
@@ -31,73 +32,21 @@
     </button>
   </div>
 </div>
-<div class="col bg-dark h-50">
-  a
-</div>
+
+<app-loading *ngIf="loading"></app-loading>
+
 <div class="row h-100 m-2">
-  <div class="col-md-8 col-sm-8 col-8 border-end">
-    <div class="card m-2">
-      <div class="card-header">
-        Titular
-      </div>
-      <div class="card-body">
-        <blockquote class="blockquote mb-0">
-          <p>Información</p>
-          <footer class="blockquote-footer">Fecha<cite title="Source Title"> Autor</cite></footer>
-        </blockquote>
-      </div>
-    </div>
-    <div class="card m-2">
-      <div class="card-header">
-        Titular
-      </div>
-      <div class="card-body">
-        <blockquote class="blockquote mb-0">
-          <p>Información</p>
-          <footer class="blockquote-footer">Fecha<cite title="Source Title"> Autor</cite></footer>
-        </blockquote>
-      </div>
-    </div>
-    <div class="card m-2">
-      <div class="card-header">
-        Titular
-      </div>
-      <div class="card-body">
-        <blockquote class="blockquote mb-0">
-          <p>Información</p>
-          <footer class="blockquote-footer">Fecha<cite title="Source Title"> Autor</cite></footer>
-        </blockquote>
-      </div>
-    </div>
-    <div class="card m-2">
-        <div class="card-header">
-          Titular
-        </div>
-        <div class="card-body">
-          <blockquote class="blockquote mb-0">
-            <p>Información</p>
-            <footer class="blockquote-footer">Fecha<cite title="Source Title"> Autor</cite></footer>
-          </blockquote>
-        </div>
-      </div>
+  <!-- Sección noticias -->
+  <div class="col-md-8 col-sm-8 col border-end">
+    <app-noticia [items]="nuevasNoticias"></app-noticia>
   </div>
+  
+  <!-- Menú lateral -->
   <div class="col-md col-sm col">
-    <ul class="list-group">
-      <li class="list-group-item">An item</li>
-      <li class="list-group-item">A second item</li>
-      <li class="list-group-item">A third item</li>
-      <li class="list-group-item">A fourth item</li>
-      <li class="list-group-item">And a fifth one</li>
-      <li class="list-group-item">An item</li>
-      <li class="list-group-item">A second item</li>
-      <li class="list-group-item">A third item</li>
-      <li class="list-group-item">A fourth item</li>
-      <li class="list-group-item">And a fifth one</li>
-      <li class="list-group-item">An item</li>
-      <li class="list-group-item">A second item</li>
-      <li class="list-group-item">A third item</li>
-      <li class="list-group-item">A fourth item</li>
-      <li class="list-group-item">And a fifth one</li>
+    <ul class="list-group" *ngFor="let noticia of nuevasNoticias">
+      <li class="list-group-item">
+        <a [href]="noticia.url" class="link-dark none-decoration"  target="_blank">{{noticia.title}}</a>
+      </li>
     </ul>
   </div>
 </div>
